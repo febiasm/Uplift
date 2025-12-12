@@ -176,9 +176,13 @@ you can also view the documentation of the routes in;
 
 
 ## Contributors
-- Project contributed by:
+- Project contributed to by:
+1. [Joseph Wambua](https://github.com/Musyoki-Wambua)
+2. [David Mwai](https://github.com/DKarimi90)
+3. [Simon Muriithi](https://github.com/Fleur41)
 4. [Trevor Thiiru](https://github.com/Febiasm)
-
+5. [Antony Tulla](https://github.com/tony555t)
+6. [Faith Kigen](https://github.com/faithkigen)
 
 
 ## License
