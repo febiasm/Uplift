@@ -1,61 +1,62 @@
-name: CI/CD Workflow 
+name: CI/CD Workflow
 
-on: 
-  push:
+on:
+  push :
+  
     branches: [main, master ]
-  pull_request: 
+  pull_request:
     branches: [ main, master ]
 
-jobs: 
-  react: 
+jobs :
+  react:
     name: React
-    runs-on: ubuntu-latest 
+    runs-on: ubuntu-latest
 
-    steps: 
-      - name: Checkout code 
+    steps:
+      - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Install dependencies 
+      - name: Install dependencies
         run: |
-          cd frontend 
-          npm install 
-      - name: Build 
+          cd frontend
+          npm install
+      - name: Build
         run: |
-          cd frontend 
-          npm run build 
+          cd frontend
+          npm run build
 #       - name: Test
 #         run: |
 #           cd frontend
 #           npm run test
-  
-  rails: 
-    name: Ruby on Rails 
-    runs-on: ubuntu-latest 
 
-    steps: 
-      - name: Checkout Code 
+  rails:
+    name: Ruby on Rails
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
         uses: actions/checkout@v2
 
-      - name: install Ruby and Bundler 
+      - name: install Ruby and Bundler
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: 2.7.4 
-          bundler-cache: true 
+          ruby-version: 2.7.4
+          bundler-cache: true
 
-      - name: Install dependencies 
+      - name: Install dependencies
         run: |
-          cd backend 
-          bundle install 
+          cd backend
+          bundle install
 
-      - name: Database setup and migration 
+      - name: Database setup and migration
         run: |
-          cd backend 
-          bin/rails db:setup 
+          cd backend
+          bin/rails db:setup
           if [ -f db/schema.rb ]; then
-            bin/rails db:migrate 
-          fi 
+            bin/rails db:migrate
+          fi
 
-      - name: Seed data 
+      - name: Seed data
         run: |
           cd backend
           bin/rails db:seed
