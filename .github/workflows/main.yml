@@ -1,13 +1,12 @@
 name: CI/CD Workflow
 
 on:
-  push :
-  
+  push:
     branches: [main, master ]
   pull_request:
     branches: [ main, master ]
 
-jobs :
+jobs:
   react:
     name: React
     runs-on: ubuntu-latest
