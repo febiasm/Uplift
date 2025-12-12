@@ -2,7 +2,7 @@ import React from "react";
 import logo from "./Images/logo.png";
 import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
- 
+
 function NavBar() {
 
   function AddOrg({ id }) {
@@ -13,7 +13,7 @@ function NavBar() {
       return (
         <div>
           <button class=" text-white hover:bg-gray-700 hover:text-white font-medium px-2 py-1 rounded-md transition-colors duration-300 ">
-            
+
            Add Organization
           </button>
         </div>
@@ -30,7 +30,7 @@ function NavBar() {
       return (
         <div>
           <button class=" text-white hover:bg-gray-700 hover:text-white font-medium px-2 py-1 rounded-md transition-colors duration-300 ">
-            
+
            Insights
           </button>
         </div>
@@ -46,7 +46,7 @@ function NavBar() {
           <Link to="/" href="h" class="flex items-center text-white">
             <img src={logo} alt="Logo" class="h-14 w-14     mr-5  " />
             <span class="text-lg font-semibold whitespace-nowrap">
-              Rising Together
+              Uplift
             </span>
           </Link>
           <button
@@ -126,12 +126,12 @@ function NavBar() {
               </li>
 
               <li>
-                <Link to ="/Organizations">
+                <Link to ="/Insight">
                 <a
                   href="h"
                   className="text-white hover:bg-gray-700 hover:text-white font-medium px-3 py-2 rounded-md transition-colors duration-300"
                 >
-                 Organizations{" "}
+                Insight{" "}
                 </a>
                 </Link>
               </li>
@@ -160,19 +160,19 @@ function NavBar() {
                 <a
                   href="h"
                   class="inline-flex items-center text-white hover:bg-green-700 bg-green-800 hover:text-white font-medium px-3 py-1 rounded-md transition-colors duration-300">
-	 
+
 <img className="h-8 mr-3"src="https://img.icons8.com/?size=512&id=99284&format=png" alt="Back Arrow Vector - Go Back Icon @clipartmax.com"/>
 	Logout
                 </a>
-            
+
               </li>
               </Link>
-              
+
             </ul>
           </div>
         </div>
       </nav>
-      
+
     </div>
   );
 }

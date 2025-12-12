@@ -11,22 +11,26 @@ import Help from "./components/Help";
  import Insight from "./components/Insight";
  import OrganisationForm from "./components/OrganisationForm";
  import ChatBox from "./components/ChatBox";
+ import DonationForm from "./components/DonationForm.js"
 
 function App() {
   return (
-     
+
 
     <div className="w-screen h-screen">
-     
+
       <Router>
       <div className="fixed bottom-0 right-0 m-4">
   <ChatBox />
 </div>
-        
-        <Routes>        
-        <Route path="/Insight" element={<Insight />} />  
+
+        <Routes>
+        <Route path="/Insight" element={<Insight />} />
+
           <Route path="/HomePage" element={<HomePage />} />
-          <Route path="/Organization" element={<Organization />} />        
+          <Route path="/Insight" element={<Insight />} />
+          <Route path="/DonationForm" element={<DonationForm />} />
+          <Route path="/Organization" element={<Organization />} />
           <Route path="/login" element={<Login />} />
           <Route path="/organizationDetails/:id" element={<OrganizationDetails />} />
           <Route path="/Help" element={<Help />} />
@@ -37,10 +41,10 @@ function App() {
           <Route path="/AddOrg" element={<OrganisationForm />} />
         </Routes>
         {/* <Home /> */}
-      
+
       </Router>
     </div>
-    
+
   );
 }
 

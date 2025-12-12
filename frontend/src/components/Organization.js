@@ -17,15 +17,17 @@ const Organization = () => {
     org.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
-  useEffect(() => {
-    fetch(`https://rising-together-ni0b.onrender.com/organizations`)
-      .then((response) => response.json())
-      .then((data) => {
-        console.log(data.name);
-        setOrganization(data);
-        setIsLoading(false);
-      });
-  }, []);
+ useEffect(() => {
+  fetch("https://api.jsonbin.io/v3/b/693aa3a7d0ea881f4021c023/latest")
+    .then((response) => response.json())
+    .then((data) => {
+      console.log("Fetched organizations:", data.record.organizations);
+
+      setOrganization(data.record.organizations);
+      setIsLoading(false);
+    })
+    .catch((error) => console.error("Fetch error:", error));
+}, []);
 
   const handleDelete = (id) => {
     fetch(`https://rising-together-ni0b.onrender.com/organizations/${id}`, {

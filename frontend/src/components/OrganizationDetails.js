@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import DonationForm from "./DonationForm";
 import NavBar from "./NavBar";
@@ -13,15 +14,25 @@ function OrganizationDetails() {
   const [organization, setOrganization] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
-    fetch("https://rising-together-ni0b.onrender.com/organizations")
-      .then((response) => response.json())
-      .then((data) => {
-        console.log(data.name);
+  async function fetchOrganizationDetails() {
+    try {
+      const response = await fetch(
+        "https://api.jsonbin.io/v3/b/693aa3a7d0ea881f4021c023/latest"
+      );
+      const data = await response.json();
 
-        setOrganization(data);
-        setIsLoading(false);
-      });
-  }, [id]);
+      console.log("Fetched organizations:", data.record.organizations);
+
+      setOrganization(data.record.organizations);
+      setIsLoading(false);
+    } catch (error) {
+      console.error("Error fetching organization details:", error);
+    }
+  }
+
+  fetchOrganizationDetails();
+}, [id]);
+
 
   if (isLoading) {
     return (
@@ -322,14 +333,16 @@ function OrganizationDetails() {
                 </p>
 
                 <div className=" mt-8 ml-32 mx-auto justify-center">
-                  {" "}
+
+                    <Link to ="/DonationForm">
                   <button
                     className="bg-green-800 w-32 h-11 text-white text-bold hover:bg-green-700 font-sarif"
-                    onClick={handleButtonClick}
+
                   >
                     Give Now
                   </button>
-                  {isCardVisible && <Card />}
+
+                  </Link>
                 </div>
               </div>
 
@@ -354,7 +367,7 @@ function OrganizationDetails() {
   Your browser does not support the video tag.
 </video> */}
                 <iframe
-                  width="750"
+                  width="550"
                   height="450"
                   src={`${organization.video_url}`}
                   title="This is Doctors Without Borders/Médecins Sans Frontières (MSF)"

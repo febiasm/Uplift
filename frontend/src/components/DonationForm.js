@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import NavBar from "./NavBar";
 const DonationForm = () => {
   const [amount, setAmount] = useState(0);
   const [firstName ] = useState("");
@@ -15,24 +15,15 @@ const DonationForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const data = ({
-      amount,
-      firstName,
-      lastName,
-      email,
-      paymentMethod,
-      isTestDonation,
-      isOfflineDonation,
-      isPaypal
-    });
-    console.log(data)
+     alert("Donations are currently under maintenance. Please try again shortly.")
+
 
     fetch('https://rising-together-ni0b.onrender.com/donations' , {
-      method: 'POST', 
+      method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify(data)
+     
     })
     .then(response => {
       if(!response.ok){
@@ -52,7 +43,10 @@ const DonationForm = () => {
   };
 
   return(
-    <div className="flex items-center justify-center bg-gray-200 h-screen">
+    <div >
+
+      <NavBar/>
+    <div className="flex items-center justify-center bg-gray-200 ">
     <div className=" rounded px-8 py-6 ">
       <h2 className="text-xl flex items-center justify-center font-bold mb-2">Make a Donation </h2>
       <p className="text-indent: 0.125rem; mb-2">Donate now! Support our mission to connect people to quality giving and volunteer opportunities worldwide!</p>
@@ -224,6 +218,7 @@ const DonationForm = () => {
       </div>
     </div>
     </div>
+    </div>
   )
-}; 
+};
 export default DonationForm;

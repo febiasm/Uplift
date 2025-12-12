@@ -6,28 +6,37 @@ function HomePage() {
   const [ngos, setNGOs] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
-    async function fetchData() {
-      const response = await fetch("https://rising-together-ni0b.onrender.com/organizations");
+  async function fetchData() {
+    try {
+      const response = await fetch(
+        "https://api.jsonbin.io/v3/b/693aa3a7d0ea881f4021c023/latest"
+      );
       const data = await response.json();
-      setNGOs(data);
-      console.log(data);
-      setIsLoading(false);
-    }
 
-    fetchData();
-  }, []);
+      console.log("Fetched NGOs:", data.record.organizations);
+
+      setNGOs(data.record.organizations);
+      setIsLoading(false);
+    } catch (error) {
+      console.error("Fetch error:", error);
+    }
+  }
+
+  fetchData();
+}, []);
+
   if (isLoading) {
     return (
       <div className=" bg-gray-900 flex items-center justify-center w-full h-full">
       <div className="flex justify-center items-center space-x-1 text-sm  text-gray-700">
-         
+
             <svg fill='none' class="w-6 h-6 animate-spin" viewBox="0 0 32 32" xmlns='http://www.w3.org/2000/svg'>
               <path clip-rule='evenodd'
                 d='M15.165 8.53a.5.5 0 01-.404.58A7 7 0 1023 16a.5.5 0 011 0 8 8 0 11-9.416-7.874.5.5 0 01.58.404z'
                 fill='currentColor' fill-rule='evenodd' />
             </svg>
-    
-         
+
+
         <div className="text-white text-2xl">Loading ...</div>
       </div>
     </div>
@@ -58,7 +67,7 @@ function HomePage() {
   }
   return (
     <section className="font-serif">
-      {/* <AdminButton /> */} <NavBar/>
+      <NavBar/>
       <div className="font-serif flex flex-wrap">
         <div className="mt-6 w-full  md:w-1/2 p-">
           <div className="h-52">
@@ -88,22 +97,14 @@ function HomePage() {
                       {ngos[0].name}
                     </p>
                   )}
-                  <div className="mt-4 translate-y-8 transform opacity-0 transition-all group-hover:translate-y-0 group-hover:opacity-100">
-                    {ngos.length > 0 && (
-                      <Link to={`/organizationDetails/${ngos[0].id}`}>
-                        <button className="bg-green-700 w-full h-8 text-xl text-white">
-                          Donate
-                        </button>
-                      </Link>
-                    )}
-                  </div>
+
                 </div>
               </div>
             </a>{" "}
           </div>
         </div>
 
-        {/* right content  */}
+
         <div className="mt-2   md:w-1/2 p-4 flex   ">
           <div className="grid grid-cols-2 gap-1 gap-x-6">
             <div className="">
@@ -132,11 +133,7 @@ function HomePage() {
                         <p className="text-lg mt-">{ngos[1].name}</p>
                       )}
                       <div className="mt-4 translate-y-8 transform opacity-0 transition-all group-hover:translate-y-0 group-hover:opacity-100">
-                      <Link to={`/organizationDetails/${ngos[1].id}`}>
-                        <button className="bg-green-700 w-full h-8 text-xl text-white">
-                          Donate
-                        </button>
-                      </Link>
+
                       </div>
                     </div>
                   </div>
@@ -146,7 +143,7 @@ function HomePage() {
 
             <div className="">
             <div className="fixed bottom-0 right-0 m-4">
- 
+
 </div>
               <a
                 href="jj"
@@ -172,13 +169,7 @@ function HomePage() {
                       {targetedNGO3 && (
                         <p className="text-lg mt-">{targetedNGO3.name}</p>
                       )}
-                      <div className="mt-4 translate-y-8 transform opacity-0 transition-all group-hover:translate-y-0 group-hover:opacity-100">
-                      <Link to={`/organizationDetails/${ngos[2].id}`}>
-                        <button className="bg-green-700 w-full h-8 text-xl text-white">
-                          Donate
-                        </button>
-                      </Link>
-                      </div>
+
                     </div>
                   </div>
                 </div>
@@ -209,13 +200,7 @@ function HomePage() {
                       {targetedNGO4 && (
                         <p className="text-lg mt-">{targetedNGO4.name}</p>
                       )}
-                      <div className="mt-4 translate-y-8 transform opacity-0 transition-all group-hover:translate-y-0 group-hover:opacity-100">
-                      <Link to={`/organizationDetails/${ngos[1].id}`}>
-                        <button className="bg-green-700 w-full h-8 text-xl text-white">
-                          Donate
-                        </button>
-                      </Link>
-                      </div>
+
                     </div>
                   </div>
                 </div>
@@ -246,13 +231,7 @@ function HomePage() {
                       {targetedNGO5 && (
                         <p className="text-lg mt-">{targetedNGO5.name}</p>
                       )}
-                      <div className="mt-4 translate-y-8 transform opacity-0 transition-all group-hover:translate-y-0 group-hover:opacity-100">
-                      <Link to={`/organizationDetails/${ngos[2].id}`}>
-                        <button className="bg-green-700 w-full h-8 text-xl text-white">
-                          Donate
-                        </button>
-                      </Link>
-                      </div>
+
                     </div>
                   </div>
                 </div>
@@ -262,7 +241,7 @@ function HomePage() {
         </div>
       </div>
 
-      {/* bottom of top cards */}
+
       <div>
         <h1 className="text-center text-green-800 text-4xl mt-8">
           How it works
@@ -286,7 +265,7 @@ function HomePage() {
             alt="dd"></img>
 
             <h3 class="mt-8 text-base   text-gray-900  ">
-              Organizations worldwide seek to join Raising Together in order to
+              Organizations worldwide seek to join Uplift in order to
               obtain greater financial support, enhance their abilities, and
               establish valuable relationships.
             </h3>
@@ -312,7 +291,7 @@ function HomePage() {
 
             <h3 class="mt-8 text-base   text-gray-900  ">
               Individuals contribute to their preferred initiatives through
-              Raising Together, receiving updates on the progress of their
+              Uplift, receiving updates on the progress of their
               donations and the impact of reputable organizations.{" "}
             </h3>
 
@@ -334,7 +313,7 @@ function HomePage() {
            alt="rr" ></img>
 
             <h3 class="mt-8 text-base   text-gray-900  ">
-              Organizations worldwide seek to partner with Raising Together to
+              Organizations worldwide seek to partner with Uplift to
               receive increased financial support, enhance their capabilities,
               and establish valuable relationships.
             </h3>
@@ -358,8 +337,7 @@ function HomePage() {
            alt="" ></img>
 
             <h3 class="mt-8 text-base   text-gray-900  ">
-              Nonprofit organizations globally seek to partner with Raising
-              Together to secure increased financial backing, bolster their
+              Nonprofit organizations globally seek to partner with Uplift to secure increased financial backing, bolster their
               capabilities, and cultivate meaningful partnerships.{" "}
             </h3>
 
@@ -377,7 +355,7 @@ function HomePage() {
               Together Fund
             </h1>
             <p className="ml-32 mt-11 text-xl text-center">
-              Raising Together is a charity website that connects people and
+              Uplift is a charity website that connects people and
               organizations to donate and fundraise for various causes,
               empowering individuals to make a positive impact in the world.
             </p>
@@ -389,7 +367,7 @@ function HomePage() {
         {role === "admin" ? "Impact Hub (admin)" : "Impact Hub"}
       </button>
     </Link>
-                       
+
               <Link to={`/Organization?role=${"admin"}`}>
               <button className="bg-green-600 w-32 h-11 text-white text-bold hover:bg-green-800"> Impact Hub
  </button></Link> */}{" "}

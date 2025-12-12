@@ -1,8 +1,8 @@
-# Rising Together
+# Uplift
 
 
 # Description
-Rising Together is a web application that connects nonprofits, donors, and companies in nearly every country in the world. We help fellow nonprofits access the funding, tools, training, and support they need to serve their communities.
+Uplift is a web application that connects nonprofits, donors, and companies in nearly every country in the world. We help fellow nonprofits access the funding, tools, training, and support they need to serve their communities.
 
 ## Development Requirements
 
@@ -14,9 +14,9 @@ Rising Together is a web application that connects nonprofits, donors, and compa
 
 ## Installation
 
-1. Clone the repository using: 
-``` 
-git clone https://github.com/Musyoki-Wambua/Rising-Together.git
+1. Clone the repository using:
+```
+git clone
 
 ```
 2. Navigate to the  directory using:
@@ -27,14 +27,14 @@ cd Rising-Together-frontend
 
 ```
 3. Install the dependencies:
-``` 
+```
 npm install
-``` 
+```
 4. Run the application using:
 ```
 npm start
 ```
-5. Open the application on your browser: 
+5. Open the application on your browser:
 ```
 http://localhost:3000.
 ```

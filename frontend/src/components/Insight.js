@@ -1,119 +1,125 @@
-import "./CSS/insight.css"
- import NavBar from "./NavBar"
-function Insight (){
-    return (
-    
-    <div className="bg-blue-900 font-serif h-full">
-        <NavBar/>
-    <div className="mt-5 grid grid-cols-2">
-    <div className=" ">
-    <div class='title'>
-  <p className="text-center text-4xl mt-7 text-green-300">Access Key Metrics and Performance Indicators</p>
-   <p className="text-center text-2xl mt-5 text-green-200"> Real-Time Data and Analytics</p>
-</div>
-<svg className='container' width="529px" height="486px" viewBox="30 27 529 286" version="1.1" xmlns="http://www.w3.org/2000/svg" >
-     
-    <desc>Created with Sketch.</desc>
-    <defs></defs>
-    <g id="graph-copy" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(30.000000, 27.000000)">
-        <g id="y_axis" font-size="15.0833333" font-family=".HelveticaNeueDeskInterface-Regular, .Helvetica Neue DeskInterface" fill="#ffff" opacity="43.4" font-weight="bold">
-            <text  id="0">
-                <tspan x="25.3008249" y="264.333333" >0</tspan>
-            </text>
-            <text id="200">
-                <tspan x="12.7757572" y="232.666667">200</tspan>
-            </text>
-            <text id="400">
-                <tspan x="12.7757572" y="201">400</tspan>
-            </text>
-            <text id="600">
-                <tspan x="12.7757572" y="169.333333">600</tspan>
-            </text>
-            <text id="800">
-                <tspan x="12.7757572" y="137.666667">800</tspan>
-            </text>
-            <text id="1000">
-                <tspan x="6.51322328" y="106">1000</tspan>
-            </text>
-            <text id="1200">
-                <tspan x="6.51322328" y="74.3333333">1200</tspan>
-            </text>
-            <text id="1400">
-                <tspan x="6.51322328" y="42.6666667">1400</tspan>
-            </text>
-            <text id="1600">
-                <tspan x="6.51322328" y="11">1600</tspan>
-            </text>
-        </g>
-        <g id="GRAPHS" transform="translate(64.000000, 16.000000)" stroke-linecap="round" stroke-width="8" stroke-linejoin="round">
-            <polyline id="Banks" stroke="#e1bb47" points="0 1 88.0438662 1 128.985782 137 180.170616 137 224.189573 182 256.947867 91 301.990521 137 346.009479 91 392.087202 91 429.952607 179"></polyline>
-            <polyline id="Bridge" stroke="#cc270a" points="2.04739336 183 54.2559242 227 96.2274882 47 133.080569 1 302.018438 1 346.680361 44.6280822 386.957346 0 427.905213 43"></polyline>
-            <polyline id="PayPal" stroke="#2196f3" points="2.04739336 180 53.273159 180 99.2985782 91 137.175355 47 219.077488 47 256.947867 90 301.990521 47 349.080569 137 398.228672 137 432 91"></polyline>
-        </g>
-        <g id="x_axis" transform="translate(71.974046, 271.541667)" font-size="15.0833333" font-family=".HelveticaNeueDeskInterface-Regular, .Helvetica Neue DeskInterface" fill="#fff" opacity="52.4" font-weight="bold">
-            <text id="1">
-                <tspan x="0.396183206" y="11">1</tspan>
-            </text>
-            <text id="2">
-                <tspan x="39.2603361" y="11">2</tspan>
-            </text>
-            <text id="3">
-                <tspan x="78.8786567" y="11">3</tspan>
-            </text>
-            <text id="4">
-                <tspan x="118.496977" y="11">4</tspan>
-            </text>
-            <text id="5">
-                <tspan x="158.115298" y="11">5</tspan>
-            </text>
-            <text id="6">
-                <tspan x="197.733619" y="11">6</tspan>
-            </text>
-            <text id="7">
-                <tspan x="237.351939" y="11">7</tspan>
-            </text>
-            <text id="8">
-                <tspan x="276.97026" y="11">8</tspan>
-            </text>
-            <text id="9">
-                <tspan x="316.58858" y="11">9</tspan>
-            </text>
-            <text id="10">
-                <tspan x="359.229833" y="11">10</tspan>
-            </text>
-            <text id="11">
-                <tspan x="400.036703" y="11">11</tspan>
-            </text>
-            <text id="12">
-                <tspan x="438.466474" y="11">12</tspan>
-            </text>
-        </g>
-        <g id="grid" transform="translate(46.618321, 4.750000)" stroke="#FFFFFF" stroke-linecap="square" opacity="0.0800000057">
-            <path d="M0.396183206,1.1875 L478.991396,1.1875" id="Line"></path>
-            <path d="M0.396183206,32.8541667 L478.991396,32.8541667" id="Line"></path>
-            <path d="M0.396183206,64.5208333 L478.991396,64.5208333" id="Line"></path>
-            <path d="M0.396183206,96.1875 L478.991396,96.1875" id="Line"></path>
-            <path d="M0.396183206,127.854167 L478.991396,127.854167" id="Line"></path>
-            <path d="M0.396183206,159.520833 L478.991396,159.520833" id="Line"></path>
-            <path d="M0.396183206,191.1875 L478.991396,191.1875" id="Line"></path>
-            <path d="M0.396183206,222.854167 L478.991396,222.854167" id="Line"></path>
-            <path d="M0.396183206,254.520833 L478.991396,254.520833" id="Line"></path>
-        </g>
-    </g>
-</svg>
-</div>
-<div>
-    <div className="pie font-bold">
-    <div className="down text-black fixed">30% Empowering <br></br> Communities </div>
-  <div className="top text-bold text-white">19% Protecting the<br></br> Environment </div>
-  <div className="bottom text-white">51% Supporting Those in Need</div>
-  
-  
-</div>
 
-</div>
-</div>
-</div>
-    )
-}
-export default Insight
+import NavBar from "./NavBar";
+const Insight = () => {
+
+  const stats = [
+    { title: "Donations Received", value: "$124,650", trend: "up", percentage: "18%" },
+    { title: "Projects Funded", value: "32", trend: "up", percentage: "5%" },
+    { title: "Volunteers Joined", value: "482", trend: "up", percentage: "12%" },
+    { title: "Funds Remaining", value: "$24,320", trend: "down", percentage: "7%" },
+  ];
+
+  const recentDonations = [
+    { donor: "Trevor Febias", amount: 500, method: "Paypal" },
+    { donor: "Duke Baraka", amount: 200, method: "Credit Card" },
+    { donor: "Anonymous", amount: 100, method: "Wallet" },
+    { donor: "Terry Kinya", amount: 250, method: "Paypal" },
+  ];
+
+  const monthlyDonations = [
+    { month: "Jan", amount: 5000 },
+    { month: "Feb", amount: 8000 },
+    { month: "Mar", amount: 7000 },
+    { month: "Apr", amount: 10000 },
+    { month: "May", amount: 8500 },
+    { month: "Jun", amount: 9000 },
+    { month: "Jul", amount: 12000 },
+  ];
+
+  return (
+    <div> <NavBar/>
+    <div className="p-6 bg-gray-100 min-h-screen">
+
+      <h1 className="text-3xl font-bold mb-6 text-center text-green-600">
+        Insights
+      </h1>
+
+      {/* Top Stats */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+        {stats.map((stat) => (
+          <div
+            key={stat.title}
+            className="bg-white rounded-lg shadow p-5 flex flex-col items-center"
+          >
+            <span className="text-gray-400 text-sm">{stat.title}</span>
+            <span className="text-xl font-bold mt-2">{stat.value}</span>
+            <span
+              className={`text-sm mt-1 ${
+                stat.trend === "up" ? "text-green-500" : "text-red-500"
+              }`}
+            >
+              {stat.trend === "up" ? "↑" : "↓"} {stat.percentage}
+            </span>
+          </div>
+        ))}
+      </div>
+
+      {/* Main Dashboard */}
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        {/* Monthly Donations Chart */}
+        <div className="bg-white rounded-lg shadow p-6">
+          <h2 className="text-lg font-bold mb-4 text-green-600">Monthly Donations</h2>
+          <div className="grid grid-cols-7 gap-2 items-end h-48">
+            {monthlyDonations.map((m) => (
+              <div key={m.month} className="flex flex-col items-center">
+                <div
+                  className="w-6 bg-green-400 rounded-t"
+                  style={{ height: `${m.amount / 300}px` }}
+                ></div>
+                <span className="text-xs mt-1">{m.month}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Recent Donations */}
+        <div className="bg-white rounded-lg shadow p-6">
+          <h2 className="text-lg font-bold mb-4 text-green-600">Recent Donations</h2>
+          <ul>
+            {recentDonations.map((donation, index) => (
+              <li
+                key={index}
+                className="flex justify-between items-center mb-2 border-b pb-1"
+              >
+                <span>{donation.donor}</span>
+                <span className="font-bold">${donation.amount}</span>
+                <span className="text-gray-400 text-sm">{donation.method}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Quick Stats / Goals */}
+        <div className="bg-white rounded-lg shadow p-6">
+          <h2 className="text-lg font-bold mb-4 text-green-600">Impact Goals</h2>
+          <div className="mb-4">
+            <p className="text-sm">Funds Goal Progress</p>
+            <div className="w-full bg-gray-200 rounded-full h-4">
+              <div className="bg-green-400 h-4 rounded-full" style={{ width: "75%" }}></div>
+            </div>
+            <p className="text-xs mt-1 text-gray-500">75% of $50,000 goal reached</p>
+          </div>
+          <div className="mb-4">
+            <p className="text-sm">Volunteer Engagement</p>
+            <div className="w-full bg-gray-200 rounded-full h-4">
+              <div className="bg-green-300 h-4 rounded-full" style={{ width: "60%" }}></div>
+            </div>
+            <p className="text-xs mt-1 text-gray-500">60% of target volunteers joined</p>
+          </div>
+          <div className="mb-4">
+            <p className="text-sm">Projects Completed</p>
+            <div className="w-full bg-gray-200 rounded-full h-4">
+              <div className="bg-green-500 h-4 rounded-full" style={{ width: "40%" }}></div>
+            </div>
+            <p className="text-xs mt-1 text-gray-500">40% of ongoing projects finished</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  );
+};
+
+
+
+export default Insight;

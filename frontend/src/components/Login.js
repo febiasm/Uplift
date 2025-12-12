@@ -6,10 +6,11 @@ function Login() {
   const navigate = useNavigate();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [user, setUser] = useState(null);
+  const [ setUser] = useState(null);
 
   const handleEmailChange = (event) => {
-    setUsername(event.target.value);
+    setUsername(event.target
+      .value);
   };
 
   const handlePasswordChange = (event) => {
@@ -19,7 +20,7 @@ function Login() {
   const handleSubmit = (event) => {
     event.preventDefault();
     const userData = { username, password };
-    fetch("https://rising-together-ni0b.onrender.com/users/login", {
+    fetch("http://127.0.0.1:3000/users/login", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(userData),
@@ -40,7 +41,7 @@ function Login() {
 
     <section
       style={{ backgroundColor: "#0E503F" }}
-      
+
     >
       <div className="flex flex-wrap items-center text-xl text-white"><img className="h-14 w-14 ml-20"src={require('./Images/logo.png')} alt="My Image" />Raising Together</div>
       <div className="flex items-center justify-center min-h-screen">
@@ -99,10 +100,11 @@ function Login() {
             </div>
 
             <button
-              type="submit"
+
               className="bg-green-500 text-white px-4 py-2 rounded-lg"
-            >
+            ><Link to="/HomePage">
               Login
+              </Link>
             </button>
             {/* </Link> */}
             <button className="block text-sm text-center text-gray-700  mt-4">
